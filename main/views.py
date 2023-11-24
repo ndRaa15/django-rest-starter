@@ -19,7 +19,7 @@ def analysis_diabetes(request):
                 'BloodPressure': [serializer.validated_data['BloodPressure']],
                 'SkinThickness': [serializer.validated_data['SkinThickness']],
                 'Insulin': [serializer.validated_data['Insulin']],
-                'BMI': [CalculateBMI(serializer.validated_data['Weight'], serializer.validated_data['Height'])],
+                'BMI': [CalculateBMI(serializer.validated_data['Weight'], (serializer.validated_data['Height'] / 100))],
                 'DiabetesPedigreeFunction': [serializer.validated_data['DiabetesPedigreeFunction']],
                 'Age': [serializer.validated_data['Age']]
             })
